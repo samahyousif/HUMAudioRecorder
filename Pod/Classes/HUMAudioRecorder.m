@@ -249,6 +249,10 @@
             [self.displayLink invalidate];
             self.displayLink = nil;
             
+            if (self.meteringEnabled) {
+                [self enableMetering];
+            }
+            
             [[AVAudioSession sharedInstance] setActive:NO error:nil];
             break;
         }
